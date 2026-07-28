@@ -1,0 +1,56 @@
+import java.util.*;
+class Student {
+    int age;
+    double marks;
+    String name;
+    Student(String name, int age, double marks) {
+        this.name = name;
+        this.age = age;
+        this.marks = marks;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Student> AL = new ArrayList<>();
+        AL.add(new Student("Raju", 19, 80));
+        AL.add(new Student("Sai", 20, 60));
+        AL.add(new Student("Seetha", 17, 75));
+        Iterator<Student> IL = AL.iterator();
+        Student highestStudent = null;
+        while (IL.hasNext()) {
+            Student s = IL.next();
+            System.out.println("Student Details:");
+            System.out.println("Name = " + s.name);
+            System.out.println("Age = " + s.age);
+            System.out.println("Marks = " + s.marks);
+            System.out.println();
+            if (highestStudent == null || s.marks > highestStudent.marks) {
+                highestStudent = s;
+            }
+        }
+        System.out.println("Highest Marks = " + highestStudent.marks);
+        System.out.println("Name = " + highestStudent.name);
+        System.out.println("Age = " + highestStudent.age);
+        System.out.println("Marks = " + highestStudent.marks);
+    }
+}
+Output:
+Student Details:
+Name = Raju
+Age = 19
+Marks = 80.0
+
+Student Details:
+Name = Sai
+Age = 20
+Marks = 60.0
+
+Student Details:
+Name = Seetha
+Age = 17
+Marks = 75.0
+
+Highest Marks = 80.0
+Name = Raju
+Age = 19
+Marks = 80.0
